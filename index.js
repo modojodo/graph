@@ -1,4 +1,4 @@
-const { grahpql, buildSchema } = require('greaphql');
+const { graphql, buildSchema } = require('graphql');
 
 
 const schema = buildSchema(`
@@ -19,3 +19,7 @@ const query = `
 query myFirstQuery {
   foo
  }`;
+
+graphql(schema, query, resolvers)
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error));
